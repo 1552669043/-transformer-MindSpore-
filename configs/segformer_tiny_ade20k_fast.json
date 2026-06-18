@@ -1,0 +1,41 @@
+{
+  "experiment_name": "segformer_tiny_ade20k_fast",
+  "seed": 42,
+  "device_target": "Ascend",
+  "mode": "GRAPH",
+  "dataset": {
+    "name": "ade20k",
+    "root": "data/ade20k",
+    "num_classes": 150,
+    "image_size": 256,
+    "batch_size": 8,
+    "num_workers": 4,
+    "max_train_samples": 4000,
+    "max_val_samples": 1000,
+    "random_subset": true
+  },
+  "model": {
+    "name": "segformer_tiny",
+    "image_size": 256,
+    "embed_dims": [16, 32, 64, 128],
+    "depths": [1, 1, 1, 1],
+    "num_heads": [1, 1, 2, 4],
+    "sr_ratios": [4, 2, 1, 1],
+    "mlp_ratio": 2.0,
+    "drop_rate": 0.0,
+    "decoder_dim": 64
+  },
+  "train": {
+    "epochs": 40,
+    "learning_rate": 0.00012,
+    "lr_schedule": "cosine",
+    "min_learning_rate": 0.000012,
+    "warmup_epochs": 1,
+    "warmup_start_lr": 0.000024,
+    "weight_decay": 0.01,
+    "print_every": 20,
+    "eval_every": 5,
+    "save_best": true,
+    "output_dir": "outputs/segformer_tiny_ade20k_fast"
+  }
+}

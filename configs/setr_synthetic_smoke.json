@@ -1,0 +1,36 @@
+{
+  "experiment_name": "setr_synthetic_smoke",
+  "seed": 42,
+  "device_target": "Ascend",
+  "mode": "GRAPH",
+  "dataset": {
+    "name": "synthetic",
+    "root": "",
+    "num_classes": 3,
+    "image_size": 128,
+    "batch_size": 2,
+    "num_workers": 1,
+    "train_length": 8,
+    "val_length": 4
+  },
+  "model": {
+    "name": "setr_tiny",
+    "image_size": 128,
+    "patch_size": 16,
+    "embed_dim": 64,
+    "depth": 2,
+    "num_heads": 4,
+    "mlp_ratio": 2.0,
+    "drop_rate": 0.0,
+    "decoder_dim": 32
+  },
+  "train": {
+    "epochs": 1,
+    "learning_rate": 0.0001,
+    "weight_decay": 0.01,
+    "print_every": 1,
+    "eval_every": 1,
+    "save_best": true,
+    "output_dir": "outputs/setr_synthetic_smoke"
+  }
+}

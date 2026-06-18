@@ -1,0 +1,5 @@
+data/
+outputs/
+*.ckpt
+__pycache__/
+*.pyc
